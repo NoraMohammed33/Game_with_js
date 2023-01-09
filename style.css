@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.game {            /* div el game */
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#character {        /*    div el charecter  */
+    width: 20px;
+    height: 50px;
+    background-color: rgb(241, 75, 10);
+    position: relative;
+    top: 150px;
+}
