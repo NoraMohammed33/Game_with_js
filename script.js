@@ -35,15 +35,15 @@ const timer = setInterval(() => {
         clearInterval(timer);
 
         if (counter > score_max) {
-            alert("New RANK! Game score: " + Math.floor(counter / 100));
+            alert("New RANK! Game score: " + (counter ));
         } else {
-            alert("Game score: " + Math.floor(counter / 100));
+            alert("Game score: " + Math.floor(counter));
         }
         counter = 0;
         location.reload();
     } else {
         counter++;
-        score.innerHTML = Math.floor(counter / 100);
+        score.innerHTML = Math.floor(counter);
     }
 }, 10);
 
