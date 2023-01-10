@@ -29,13 +29,14 @@ var timer = setInterval(() => {
 
     if (blockLeft < 20 && blockLeft > -20 && characterTop >= 130) {
         const score_max = Math.max(...scores);
-
+       
         saveNewScore();
         block.style.animation = "none";
         clearInterval(timer);
 
         if (counter > score_max) {
             alert("New RANK! Game score: " + Math.floor(counter / 100));
+
         } else {
             alert("Game score: " + Math.floor(counter / 100));
         }
