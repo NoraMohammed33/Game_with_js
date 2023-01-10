@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"  >
+<html lang="en" dir="ltr" onclick="jump()">
 
 <head>
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="style.css">
     <title>jump_Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -14,14 +16,19 @@
         <br>
         <h3>Click/Touch the page or press Space to jump!</h3>
     </div>
-    
+
     <br>
     <div class="game">
+            <img src="imgs/g.png" id="jj" alt="">
         <div id="character">
+            <img src="imgs/p.PNG" class="snakeimg" alt="">
         </div>
         <div id="block">
         </div>
     </div>
+    <p>
+        Score: <span id="scoreSpan"></span>
+    </p>
     <script src="script.js"></script>
 </body>
 

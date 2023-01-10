@@ -5,16 +5,16 @@ var character = document.getElementById("character");
 let counter = 0;
 let scores = [];
 
-const loadScores = () => {
+var loadScores = () => {
     scores = JSON.parse(localStorage.getItem("scores"));
 };
 
-const saveNewScore = () => {
+var saveNewScore = () => {
     scores.push(counter);
     localStorage.setItem("scores", JSON.stringify(scores));
 };
 
-const jump = () => {
+var jump = () => {
     if (character.classList === "animate") return;
     character.classList.add("animate");
 
@@ -23,7 +23,7 @@ const jump = () => {
     }, 300);
 };
 
-const timer = setInterval(() => {
+var timer = setInterval(() => {
     const characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
 
@@ -35,15 +35,15 @@ const timer = setInterval(() => {
         clearInterval(timer);
 
         if (counter > score_max) {
-            alert("New RANK! Game score: " + (counter ));
+            alert("New RANK! Game score: " + Math.floor(counter / 100));
         } else {
-            alert("Game score: " + Math.floor(counter));
+            alert("Game score: " + Math.floor(counter / 100));
         }
         counter = 0;
         location.reload();
     } else {
         counter++;
-        score.innerHTML = Math.floor(counter);
+        score.innerHTML = Math.floor(counter / 100);
     }
 }, 10);
 
