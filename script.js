@@ -5,35 +5,37 @@ var character = document.getElementById("character");
 let counter = 0;
 let scores = [];
 
-var loadScores = () => {
+const loadScores = () => {
     scores = JSON.parse(localStorage.getItem("scores"));
 };
 
-var saveNewScore = () => {
+const saveNewScore = () => {
     scores.push(counter);
     localStorage.setItem("scores", JSON.stringify(scores));
 };
 
-var jump = () => {
+const jump = () => {
     if (character.classList === "animate") return;
     character.classList.add("animate");
-
+    document.getElementById("audio2").play();
+    
     setTimeout(() => {
         character.classList.remove("animate");
     }, 300);
 };
 
-var timer = setInterval(() => {
+const timer = setInterval(() => {
     const characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     const blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
 
     if (blockLeft < 20 && blockLeft > -20 && characterTop >= 130) {
         const score_max = Math.max(...scores);
-       
+
+        document.getElementById("audio3").play();
+
         saveNewScore();
         block.style.animation = "none";
         clearInterval(timer);
-
         if (counter > score_max) {
             alert("New RANK! Game score: " + Math.floor(counter / 100));
 
